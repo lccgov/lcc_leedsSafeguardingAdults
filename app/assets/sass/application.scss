@@ -11,7 +11,7 @@
 //base.scss
 
 //$base-background-color:#fff;
-//$base-font-size:16px ;
+$base-font-size:14px ;
 //$base-font-color:#333 ;
 //$base-link-color:#133E8D ;
 //$base-container-width:1500px ;
@@ -140,7 +140,7 @@ $accordion-color:green;
 
 h1, h2, h3, h4, h5 {
     font-family:$font-secondary;
-      margin:0.8em 0 0.4em 0;
+      margin:0.5em 0 0.5em 0;
 }
 
 p{
@@ -413,6 +413,51 @@ li {
  
 }
 
+
+ /* Begin generic Table styling ------------------------------------------------------------------ */
+
+table.styledTable {
+	font-size:1em;
+	margin:20px 0;
+	background:#ddd;
+	border-collapse:collapse;
+	width:100%;
+ }
+ 
+ table.styledTable th{
+   	padding:8px;
+   	text-align:left;
+   	border:2px solid #ddd;
+   	background:#eee;
+   	margin:0px;
+ }
+ 
+ .styledTable tr.resultsAlternatingRowStyle td{
+   	background:#f6f6f6;
+ }
+ 
+table.styledTable  td{
+   	padding:8px;
+   	border:2px solid #ddd;
+   	margin:0px;
+   	background:#fff; 
+ }
+ 
+ table.styledTable tbody th{
+   	background:#fff;
+ }
+ 
+ table.styledTable img{
+   	margin:0 30%;
+ }
+ 
+  table.styledTable p{
+   	font-size:1em;
+   	padding:0 0 10px 0;
+  }
+
+ 
+/* End generic Table styling ------------------------------------------------------------------ */ 
 
 
 
