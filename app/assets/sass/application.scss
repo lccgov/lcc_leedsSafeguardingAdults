@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,300,700,800,400,600');
 // available variables to change the brand colours as required
 // masterhead.scss
 
@@ -11,7 +12,7 @@
 //base.scss
 
 //$base-background-color:#fff;
-$base-font-size:14px ;
+$base-font-size:16px ;
 //$base-font-color:#333 ;
 //$base-link-color:#133E8D ;
 //$base-container-width:1500px ;
@@ -126,6 +127,8 @@ $accordion-color:green;
 @import 'blocklinks';
 @import 'contentLink';
 @import 'docList';
+@import 'accessibility';
+@import 'browser-alert';
 
 
 .masterhead{
@@ -139,13 +142,9 @@ $accordion-color:green;
 
 
 h1, h2, h3, h4, h5 {
-    font-family:$font-secondary;
-      margin:0.5em 0 0.5em 0;
+    font-family:$font-secondary !important;
 }
 
-p{
-    line-height:1.6em;
-}
 
 
    .btn{
@@ -319,6 +318,7 @@ li {
 
 .contentLink {
 
+
     ul li {
 
    margin:0 0 30px 0;
@@ -326,6 +326,11 @@ li {
     div {
 
       height:100%;
+
+      a{
+          white-space:pre-line;
+
+      }
 
         h2 {
          font-weight:normal;
@@ -378,14 +383,35 @@ li {
 &.promotion ul li div {
  padding:0px;
  background:transparent;
+
+  a{
+    position:relative;
+    top:0px;
+    left:0px;
+    bottom:0px;
+    right:0px;
+    display:block;
+  }
+
+  &:after{
+      height:0px;
+  }
+}
+
+
+@media (max-width:991px){
+&.promotion ul li{
+    width:100%;
 }
 }
+}
+
+
 
 
 .sideNav {
     background:transparent;
     margin-bottom:30px;
-    border-top: 1px solid #D8DDDF;
     padding:0px;
 
     ul{
@@ -397,15 +423,21 @@ li {
 
            a{
             padding: 20px;
-            border-bottom: 1px solid #D8DDDF;
+            border-bottom: 1px dotted #D8DDDF;
             margin: 0;
             text-decoration:none;
+            color:#006699;
 
 
              &.active{
-                background:#38A9DB;
-                color:#fff;
+                background:#efefef;
                 box-shadow: inset 0px 1px 4px 0px rgba(0, 0, 0, 0.21);
+                color:#006699;
+
+                &:hover{
+                    background:#efefef !important;
+                    cursor:default;
+                }
              }
     }
     }
@@ -459,5 +491,30 @@ table.styledTable  td{
  
 /* End generic Table styling ------------------------------------------------------------------ */ 
 
+
+.masterhead a.navbar-brand {
+    display:none;
+}
+
+
+
+.contentLink li div {
+    position:relative;
+    padding-bottom: 100px;
+
+    a.btn{
+        position:absolute;
+        bottom:30px;
+        left:30px;
+        right:30px;
+        width:auto;
+    }
+
+    &:after{
+        content:'';
+        height:80px;
+        display:block;
+    }
+}
 
 
